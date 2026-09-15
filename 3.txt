@@ -4,3 +4,11 @@
 4. 图2 node-level sparse obeservation，有什么意义吗？后面也没提到这个node-level，我的意思是实验没有提。
 5. SpaTE不能保证所有场景稳定 MLU 性能优势，要在实验结果详细解释为什么达不到，但是我觉得实验结果应该给SpaTE是最好的，现在的结果有点缺乏说服力。
 6. 这个实验能做吗？1）路由稳定性（Routing Stability）：将t 时刻预测的路由策略应用到未来 t+1 到t+9 的 TM 序列。观察随时间推移的性能退化，评估策略稳定性。 2）链路故障下的鲁棒性（Robustness to Link Failures and Traffic Changes）链路故障：随机移除部分链路，比较不同方法的 MLU。3）稀疏比例泛化（Sparse Ratio Generalization）在 50%、30%、10% 稀疏比例下训练模型，再在 50%–10% 的不同稀疏比例下测试。评估方案 对不同稀疏程度的泛化能力。
+7.缺少和最相关的论文做比较，可以比吗？DOTE [1] ( It models TE optimization as a stochastic optimization problem and employs DNNs to establish an 
+end-to-end mappingrelationship from historical TMs to the future routing policies. Similar to RL-based TE method, the input TMs are sparse TMs.)
+RL[2]( It utilizes RL to learn the routing policies from a set of historical TMs. Due to sparse trafﬁc measurements, the historical TMs are constructed by the sparse TMs.)
+[1]Yarin Perry, Felipe Vieira Frujeri, Chaim Hoch, Srikanth Kandula, Ishai Menache, Michael Schapira, and Aviv Tamar. {DOTE}: Rethinking (predictive){WAN} traffic engineering. In 20th USENIX Symposium on Networked Systems Design and Implementation (NSDI 23), pages 1557–1581, 2023 .
+ [2]A. Valadarsky, M. Schapira, D. Shahaf, and A. Tamar,“Learning to route,”in Proc. 16th ACM Workshop Hot Topics Netw., 2017, pp. 185–191.
+8. 5.5   Takeaways可以删了
+9.现在实验体现不出来提出方法的优势，更像是在做测试。可以参考一下相关论文，怎么更好的体现这个实验内容
+
